@@ -41,11 +41,11 @@
   <body style="background-color:lightblue">
   
   <?php require_once("connexion_base.php");
-
-    $rechercher = $_POST["rechercher"];
-    $valider = $_POST["validation"];
            
       if(isset($valider)) {
+
+        $rechercher = $_POST["rechercher"];
+        $valider = $_POST["validation"];
                 
         $req = $pdo->query("SELECT * FROM automobile WHERE marque LIKE '%$rechercher%'");
 
@@ -85,7 +85,6 @@
         </tr>
         
         <?php
-          $message = " euros";
           
           if(empty($row))  {
             $Err = '<div style="text-align:center">Aucune résultat</div>';
@@ -102,7 +101,7 @@
             <td><?php echo $row['kilometrage']; ?></td>
             <td><?php echo $row['vitesse']; ?></td>
             <td><?php echo $row['places']; ?></td>
-            <td><?php echo $row['prix'].$message; ?></td>
+            <td><?php echo $row['prix']; ?></td>
             <td><a href="supprimer_location.php?supprimer_imm=<?php echo $row['immatriculation']; ?>"><img src="images_location/supprimer-bouton.jpg" class="image3"></a></td>
             <td><a href="modifier_location.php?modifier_imm=<?php echo $row['immatriculation']; ?> &modifier_marque=<?php echo $row['marque']; ?> &modifier_carburant=<?php echo $row['carburant']; ?> &modifier_kilometrage=<?php echo $row['kilometrage']; ?> &modifier_vitesse=<?php echo $row['vitesse']; ?> &modifier_places=<?php echo $row['places']; ?> &modifier_prix=<?php echo $row['prix']; ?> &modifier_photo=<?php echo $row['photo']; ?>"><img src="images_location/bouton_modifier.jpg" class="image4"></a></td>
           </tr>
