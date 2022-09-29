@@ -1,12 +1,4 @@
 <?php
-  
-  $marque = trim($_POST['marque']);
-  $carburant = trim($_POST['type_carburant']);
-  $kilometrage = trim($_POST['kilometrage']);
-  $vitesse = trim($_POST['boîte_vitesse']);
-  $places = $_POST['nombre_places'];
-  $prix = $_POST['prix'];
-  $modification = $_POST['modification'];
 
   $Modifier = $_GET['modifier_imm'];
   $Marque = $_GET['modifier_marque'];
@@ -21,6 +13,14 @@
   move_uploaded_file($photo,$chemin);
   
     if(isset($modification)) {
+
+      $marque = trim($_POST['marque']);
+      $carburant = trim($_POST['type_carburant']);
+      $kilometrage = trim($_POST['kilometrage']);
+      $vitesse = trim($_POST['boîte_vitesse']);
+      $places = $_POST['nombre_places'];
+      $prix = $_POST['prix'];
+      $modification = $_POST['modification'];
 
       include("connexion_base.php");
        
