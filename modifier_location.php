@@ -8,10 +8,6 @@
   $Places = intval($_GET['modifier_places']);
   $Prix = $_GET['modifier_prix'];
   
-  $photo = $_FILES['photo']['tmp_name'];
-  $chemin = "Images/".$_FILES['photo']['name'];
-  move_uploaded_file($photo,$chemin);
-  
     if(isset($modification)) {
 
       $marque = trim($_POST['marque']);
@@ -21,6 +17,10 @@
       $places = $_POST['nombre_places'];
       $prix = $_POST['prix'];
       $modification = $_POST['modification'];
+
+      $photo = $_FILES['photo']['tmp_name'];
+      $chemin = "Images/".$_FILES['photo']['name'];
+      move_uploaded_file($photo,$chemin);
 
       include("connexion_base.php");
        
