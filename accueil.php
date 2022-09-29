@@ -61,8 +61,13 @@
         <form action="" method="post" enctype="multipart/form-data">
           <div class="container pt-3">
             <input type="text" name="rechercher" placeholder="Recherchez par marque" style="width: 300px">
-            <button name="validation" class="btn btn-primary">Recherchez</button><?php echo $erreur; ?>
+            <button name="validation" class="btn btn-primary">Recherchez</button>
+            <?php 
+              global $erreur;
+              echo $erreur; 
+            ?>
           </div>
+
           <div class="container pt-3">
             <a href="ajouter_location.html" class="navbar-brand"><img src="images_location/bouton_ajouter.jpeg" class="image2"><strong>Ajouter</strong></a>
           </div>
