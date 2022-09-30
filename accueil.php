@@ -42,10 +42,9 @@
   
   <?php require_once("connexion_base.php");
            
-      if(isset($valider)) {
+      if(isset($_POST["validation"])) {
 
         $rechercher = $_POST["rechercher"];
-        $valider = $_POST["validation"];
                 
         $req = $pdo->query("SELECT * FROM automobile WHERE marque LIKE '%$rechercher%'");
 
