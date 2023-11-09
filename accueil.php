@@ -38,7 +38,7 @@
     
   </head>
     
-  <body style="background-color:lightblue">
+  <body>
   
   <?php require_once("connexion_base.php");
            
@@ -75,7 +75,7 @@
            <table width="100%" border="2" class="table table-striped table-bordered border-primary">
           </div>
        
-        <tr>
+        <tr class="table-secondary">
           <th>Photo</th>
           <th>Immatriculation</th>
           <th>Marque</th>
@@ -97,7 +97,7 @@
           while($row = $req->fetch()) {
              unset($Err);
         ?>
-          <tr>
+          <tr class="table-primary">
             <td><img src="<?php echo $row['photo']; ?>" class="image1"></td>
             <td><?php echo $row['immatriculation']; ?></td>
             <td><?php echo $row['marque']; ?></td>
